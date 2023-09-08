@@ -23,12 +23,19 @@ O projeto consiste em um sistema de controle de veículos, incluindo o cadastro 
 
 Siga as instruções abaixo para executar o projeto:
 
-1. **Configuração do Ambiente Virtual (venv):** Crie um ambiente virtual para o projeto usando o seguinte comando:
+1. **Clonar o Repositório: Clone este repositório em seu sistema local usando o seguinte comando:**
+
+   ```bash
+   git clone git@github.com:lst15/mvt-agsistemas.git
+   cd mvt-agsistemas
+   ``` 
+
+2. **Configuração do Ambiente Virtual (venv):** Crie um ambiente virtual para o projeto usando o seguinte comando:
 
    ```bash
    python -m venv venv
 
-2. **Ativar o Ambiente Virtual: Ative o ambiente virtual:**
+3. **Ativar o Ambiente Virtual: Ative o ambiente virtual:**
     * Windows
       
    ```bash
@@ -39,15 +46,9 @@ Siga as instruções abaixo para executar o projeto:
      
    ```bash
    source venv/bin/activate
-   ```
-   
-3. **Clonar o Repositório: Clone este repositório em seu sistema local usando o seguinte comando:**
+   ```  
 
-   ```bash
-   git clone git@github.com:lst15/mvt-agsistemas.git
-   ```   
-
-4. **Navegue até o diretório do projeto e execute o seguinte comando para instalar as dependências necessárias:**
+4. **Execute o seguinte comando para instalar as dependências necessárias:**
 
    ```bash
    pip install -r requirements.txt
@@ -59,7 +60,7 @@ Siga as instruções abaixo para executar o projeto:
    ```bash
    python manage.py migrate
    ```
-6. ** Inicie o servidor Django com o seguinte comando:**
+6. **Inicie o servidor Django com o seguinte comando:**
 
    ```bash
    python manage.py runserver
