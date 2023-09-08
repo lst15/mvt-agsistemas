@@ -1,6 +1,6 @@
-# Teste de Desenvolvimento para AGSistemas
+# Teste de Desenvolvimento para AGSistemas - API Rest com DRF
 
-Este é um projeto de teste desenvolvido para a empresa AGSistemas. O objetivo do teste é criar um aplicativo web CRUD (Create, Read, Update, Delete) usando o framework Django em Python e um banco de dados SQLite. O projeto segue a arquitetura MVT (Model-View-Template) do Django.
+Este é um projeto de teste desenvolvido para a empresa AGSistemas, focado na construção de uma API Rest utilizando o Django Rest Framework (DRF) em Python e um banco de dados SQLite. Este projeto não segue a arquitetura MVT (Model-View-Template) do Django, mas sim a arquitetura de API Restful.
 
 ## Descrição do Projeto
 
