@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-Copyright (c) 2019 - present AppSeed.us
+
 """
 
 import os, random, string
@@ -8,6 +8,7 @@ import os, random, string
 from dotenv import load_dotenv
 from unipath import Path
 import dj_database_url
+from django.contrib.messages import constants as messages
 
 load_dotenv()
 
@@ -33,7 +34,10 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085', 'http:
 
 INSTALLED_APPS = [
     'import_export',
-
+    'page_control',
+    'vehicles',
+    'drivers',
+    'control',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,3 +145,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# Ajuste a duração da mensagem de erro (ou de outros tipos de mensagem) em segundos.
+# Por padrão, a duração é de 5 segundos (5 * 1000 ms).
+messages.ERROR_MESSAGES_DURATION = 10000  # 10 segundos

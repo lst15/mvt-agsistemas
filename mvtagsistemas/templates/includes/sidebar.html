@@ -4,36 +4,38 @@
 
             <ul class="nav flex-column">
 
-                <li class="nav-item  {% if 'transactions' in segment %} active {% endif %}">
-                    <a class="nav-link">
+                <li class="nav-item  {% if 'controlitens' in segment %} active {% endif %}">
+                    <a href="{% url 'controlitens' %}" class="nav-link">
                         <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
                         <span>Pagina Inicial</span>
                     </a>
                 </li>                
 
-            </ul>
-
-            <ul class="nav flex-column">
-
-                <li class="nav-item  {% if 'transactions' in segment %} active {% endif %}">
-                    <a class="nav-link">
-                        <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
-                        <span>Motoristas</span>
-                    </a>
-                </li>                
-
-            </ul>
-
-            <ul class="nav flex-column">
-
-                <li class="nav-item  {% if 'transactions' in segment %} active {% endif %}">
-                    <a class="nav-link">
+                <li class="nav-item  {% if 'vehicleitens' in segment %} active {% endif %}">
+                    <a href="{% url 'vehicleitens' %}" class="nav-link">
                         <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
                         <span>Veiculos</span>
                     </a>
-                </li>                
+                </li>
 
-            </ul>
+                <li class="nav-item  {% if 'driveritens' in segment %} active {% endif %}">
+                    <a href="{% url 'driveritens' %}" class="nav-link">
+                        <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+                        <span>Motoristas</span>
+                    </a>
+                </li> 
+
+                <li role="separator" class="dropdown-divider mt-4 mb-3 border-black"></li>
+
+                <li class="nav-item">
+                    <a target="_blank" 
+                       href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" class="nav-link d-flex align-items-center">
+                    <span class="sidebar-icon"><span class="fas fa-book"></span></span>
+                    <span>GitHub</span>
+                    </a>
+                </li>
+
+            </ul>            
 
         </div>
     </nav>
