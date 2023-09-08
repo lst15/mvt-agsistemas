@@ -11,8 +11,8 @@ $(document).ready(function () {
         param['btn'] = btn;
 
         $.confirm({
-                title: 'Warning!',
-                content: 'Are you sure you want to delete?',
+                title: 'Aviso!',
+                content: 'Você tem certeza que quer deletar isto?',
                 type: 'red',
                 buttons: {
                     yes: function () {
