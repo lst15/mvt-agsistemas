@@ -30,12 +30,14 @@ Siga as instruções abaixo para executar o projeto:
    cd mvt-agsistemas
    ``` 
 
-2. **Configuração do Ambiente Virtual (venv):** Crie um ambiente virtual para o projeto usando o seguinte comando:
+2. **Crie o arquivo .env com base no arquivo env-example do repositório**
+
+3. **Configuração do Ambiente Virtual (venv):** Crie um ambiente virtual para o projeto usando o seguinte comando:
 
    ```bash
    python -m venv venv
 
-3. **Ativar o Ambiente Virtual: Ative o ambiente virtual:**
+4. **Ativar o Ambiente Virtual: Ative o ambiente virtual:**
     * Windows
       
    ```bash
@@ -48,19 +50,19 @@ Siga as instruções abaixo para executar o projeto:
    source venv/bin/activate
    ```  
 
-4. **Execute o seguinte comando para instalar as dependências necessárias:**
+5. **Execute o seguinte comando para instalar as dependências necessárias:**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Configure as configurações de banco de dados no arquivo settings.py de acordo com suas configurações do MySQL.**
+6. **Configure as configurações de banco de dados no arquivo settings.py de acordo com suas configurações do MySQL.**
     * Execute as migrações para criar as tabelas do banco de dados
       
    ```bash
    python manage.py migrate
    ```
-6. **Inicie o servidor Django com o seguinte comando:**
+7. **Inicie o servidor Django com o seguinte comando:**
 
    ```bash
    python manage.py runserver
