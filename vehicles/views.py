@@ -89,7 +89,7 @@ class VehicleView(View):
                     else:
                         filter_params |= Q(vehicle_plate__icontains=key.strip())
 
-        vehicleitens = VehicleModel.objects.filter(filter_params) if filter_params else VehicleModel.objects.all()
+        vehicleitens = VehicleModel.objects.filter(filter_params) if filter_params else VehicleModel.objects.all().order_by("vehicle_plate")
 
         self.context['vehicleitens'], self.context['info'] = set_pagination(request, vehicleitens)
         if not self.context['vehicleitens']:

@@ -96,7 +96,7 @@ class DriverView(View):
                     else:
                         filter_params |= Q(driver_name__icontains=key.strip())
 
-        driveritens = DriverModel.objects.filter(filter_params) if filter_params else DriverModel.objects.all()
+        driveritens = DriverModel.objects.filter(filter_params) if filter_params else DriverModel.objects.all().order_by('driver_name')
 
         self.context['driveritens'], self.context['info'] = set_pagination(request, driveritens)
         if not self.context['driveritens']:
