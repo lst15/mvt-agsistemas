@@ -11,3 +11,6 @@ class DriverModel(models.Model):
     class Meta:
         verbose_name = 'driverModel'
         verbose_name_plural = 'driverModel'
+        
+    def __str__(self):
+        return self.driver_name        

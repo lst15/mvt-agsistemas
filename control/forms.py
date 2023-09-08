@@ -15,33 +15,32 @@ class ControlForm(forms.ModelForm):
   
   vehicle = forms.ModelChoiceField(
       label="Veiculo",
-      queryset=VehicleModel.objects.all(),  # Queryset com todos os veículos disponíveis
-      empty_label="Selecione um veículo",  # Rótulo padrão para a opção vazia
-      widget=forms.Select(attrs={'class': 'form-control transaction'}),  # Use um menu suspenso como widget
+      queryset=VehicleModel.objects.all(),  
+      empty_label="Selecione um veículo",  
+      widget=forms.Select(attrs={'class': 'form-control transaction'}),  
   )
   
   driver = forms.ModelChoiceField(
       label="Motorista",
-      queryset=DriverModel.objects.all(),  # Queryset com todos os veículos disponíveis
-      empty_label="Selecione um motorista",  # Rótulo padrão para a opção vazia
-      widget=forms.Select(attrs={'class': 'form-control transaction'})  # Use um menu suspenso como widget
+      queryset=DriverModel.objects.all(),  
+      empty_label="Selecione um motorista", 
+      widget=forms.Select(attrs={'class': 'form-control transaction'})  
   )
   departure_date = forms.DateField(
     initial=datetime.date.today,
     label="Data saida",
-    # widget=forms.DateInput(attrs={'class': 'form-control transaction'})
+
     widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control transaction'}, format='%Y-%m-%d'),
     input_formats=('%Y-%m-%d',)
     )
   
-  #departure_time = forms.CharField(label="Hora saida", widget=forms.TextInput(attrs={'class': 'form-control transaction'}))
   departure_km = forms.CharField(label="KM Saida", widget=forms.TextInput(attrs={'class': 'form-control transaction'}))
   departure_destination = forms.CharField(label="Saida destino", widget=forms.TextInput(attrs={'class': 'form-control transaction'}))
   
   return_date = forms.DateField(
     initial=datetime.date.today,
     label="Data retorno",
-    # widget=forms.DateInput(attrs={'class': 'form-control transaction'})
+
     widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control transaction'}, format='%Y-%m-%d'),
     input_formats=('%Y-%m-%d',)
     )

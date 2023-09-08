@@ -17,3 +17,6 @@ class VehicleModel(models.Model):
     class Meta:
         verbose_name = 'vehicleModel'
         verbose_name_plural = 'vehicleModel'
+        
+    def __str__(self):
+        return self.vehicle_plate      
