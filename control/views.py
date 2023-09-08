@@ -53,6 +53,8 @@ class ControlView(View):
 
         if pk and action == 'edit':
             return self.edit(request, pk)
+        elif pk and action == 'view':
+            return self.viewDetail(request,pk)        
         return self.list(request)
 
     def post(self, request, pk=None, action=None):
@@ -109,6 +111,14 @@ class ControlView(View):
         self.context['form'] = ControlForm(instance=controliten)
 
         return render(request, 'app/controlitens/edit.html', self.context)
+
+    def viewDetail(self, request, pk):
+        controliten = get_object_or_404(ControlModel, id=pk)
+
+        self.context['controliten'] = controliten
+        self.context['form'] = ControlForm(instance=controliten)
+
+        return render(request, 'app/controlitens/view.html', self.context)
 
     def get_object(self, pk):
         return get_object_or_404(ControlModel, id=pk)

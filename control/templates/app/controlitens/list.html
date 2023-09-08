@@ -115,6 +115,10 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item edit_item"
+                                        href="{% url 'controlitens' controliten.id 'view' %}">
+                                         <span class="fas fa-eye mr-2"></span>Ver
+                                     </a>                                        
+                                        <a class="dropdown-item edit_item"
                                            href="{% url 'controlitens' controliten.id 'edit' %}">
                                             <span class="fas fa-edit mr-2"></span>Editar
                                         </a>

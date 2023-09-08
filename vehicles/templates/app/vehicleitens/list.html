@@ -103,6 +103,10 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item edit_item"
+                                        href="{% url 'vehicleitens' vehicleiten.id 'view' %}">
+                                         <span class="fas fa-eye mr-2"></span>Ver
+                                     </a>                                        
+                                        <a class="dropdown-item edit_item"
                                            href="{% url 'vehicleitens' vehicleiten.id 'edit' %}">
                                             <span class="fas fa-edit mr-2"></span>Editar
                                         </a>

@@ -48,14 +48,15 @@ class Create(View):
         html_template = loader.get_template('app/driveritens/register.html')
         return HttpResponse(html_template.render(self.context, request))
 
-
 class DriverView(View):
     context = {'segment': 'driveritens'}
 
     def get(self, request, pk=None, action=None):
-
+        
         if pk and action == 'edit':
             context, template = self.edit(request, pk)
+        elif pk and action == 'view':
+            context,template = self.viewDetail(request,pk)
         else:
             context, template = self.list(request)
 
@@ -111,6 +112,14 @@ class DriverView(View):
         self.context['form'] = DriverForm(instance=driveriten)
 
         return self.context, 'app/driveritens/edit.html'
+
+    def viewDetail(self, request, pk):
+        driveriten = self.get_object(pk)
+
+        self.context['driveriten'] = driveriten
+        self.context['form'] = DriverForm(instance=driveriten)
+
+        return self.context, 'app/driveritens/view.html'
 
     """ Common methods """
 

@@ -49,6 +49,8 @@ class VehicleView(View):
 
         if pk and action == 'edit':
             context, template = self.edit(request, pk)
+        elif pk and action == 'view':
+            context,template = self.viewDetail(request,pk)            
         else:
             context, template = self.list(request)
 
@@ -105,6 +107,13 @@ class VehicleView(View):
 
         return self.context, 'app/vehicleitens/edit.html'
 
+    def viewDetail(self, request, pk):
+        vehicleiten = self.get_object(pk)
+
+        self.context['vehicleiten'] = vehicleiten
+        self.context['form'] = VehicleForm(instance=vehicleiten)
+
+        return self.context, 'app/vehicleitens/view.html'
 
     """ Common methods """
 
